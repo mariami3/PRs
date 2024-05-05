@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objects Interaction</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <style>
+        .object-info {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Взаимодействие объектов</h1>
+        <div class="form-group">
+            <label for="objectName">Название объекта:</label>
+            <input type="text" class="form-control" id="objectName">
+        </div>
+        <button class="btn btn-primary" onclick="addObject()">Добавьте объект</button>
+
+        <div id="objectsList" class="object-info"></div>
+    </div>
+
+    <script>
+        class Object {
+            constructor(name) {
+                this.name = name;
+            }
+
+            getInfo() {
+                return `Object name: ${this.name}`;
+            }
+        }
+
+        let objects = [];
+
+        function addObject() {
+            const objectName = document.getElementById('objectName').value;
+            if (objectName) {
+                const newObj = new Object(objectName);
+                objects.push(newObj);
+                updateObjectsList();
+            } else {
+                alert('Please enter the object name.');
+            }
+        }
+
+        function updateObjectsList() {
+            const objectsList = document.getElementById('objectsList');
+            objectsList.innerHTML = '';
+            objects.forEach(obj => {
+                const objInfo = document.createElement('div');
+                objInfo.classList.add('alert', 'alert-primary');
+                objInfo.textContent = obj.getInfo();
+                objectsList.appendChild(objInfo);
+            });
+        }
+    </script>
+
+</body>
+
+</html>
