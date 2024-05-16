@@ -1,0 +1,124 @@
+@font-face {
+    font-family: "Pop";
+    font-display: swap;
+    src: url("Materials/Poppins-Black.ttf") format("woff");
+}
+
+body {
+    margin: 0%;
+}
+
+html {
+    overflow-x: hidden;
+    overflow-y: scroll;
+    margin: 0%;
+}
+
+.photo {
+    width: 800px;
+    height: 1000px;
+    margin-left: 58%;
+    position: absolute;
+}
+
+.text {
+    font-family: "Pop", serif;
+    font-size: 350%;
+    color: #00B594;
+    position: absolute;
+    margin-top: 300px;
+    margin-left: 200px;
+}
+
+.logo {
+    margin-left: 200px;
+    margin-top: 70px;
+    position: absolute;
+}
+
+.grey-button {
+    margin-top: 700px;
+    margin-left: 450px;
+    position: absolute;
+}
+
+.green-button {
+    margin-top: 700px;
+    margin-left: 200px;
+    position: absolute;
+}
+
+
+/*Компьютер / ноутбук*/
+
+@media (max-width: 2560px) {
+    .text {
+        color: rgb(214, 214, 214);
+    }
+}
+
+
+/*Планшет*/
+
+@media (max-width: 1454px)and (min-width: 769px) {
+    .photo {
+        visibility: hidden;
+    }
+    .text {
+        font-size: 400%;
+        margin: 20px;
+        margin-left: 450px;
+        margin-top: 100px;
+        text-align: center;
+        color: #00B594;
+    }
+    .logo {
+        margin: 20px;
+        margin-left: 450px;
+        text-align: center;
+    }
+    .grey-button {
+        margin: 20px;
+        margin-left: 730px;
+    }
+    .green-button {
+        margin: 20px auto;
+        text-align: center;
+        margin-left: 950px;
+    }
+}
+
+
+/*Телефон*/
+
+@media (max-width: 768px) {
+    .photo {
+        visibility: hidden;
+    }
+    .text {
+        font-size: 400%;
+        margin-left: 400px;
+        text-align: center;
+        margin-top: 50px;
+        color: #00B594;
+    }
+    .logo {
+        margin: 20px;
+        margin-left: 430px;
+        text-align: center;
+    }
+    .grey-button {
+        margin: 30px auto;
+        text-align: center;
+        margin-top: 950px;
+        margin-left: 620px;
+        transform: scale(1.6);
+    }
+    .green-button {
+        margin: 20px auto;
+        text-align: center;
+        margin-top: 950px;
+        margin-left: 320px;
+        transform: scale(1.56);
+    }
+}
